@@ -7,46 +7,367 @@
 <title>Chetan — Video Editor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#080808;--card:#111;--text:#f5f5f5;--muted:#a3a3a3;--line:#242424;--accent:#d7ff3f;--max:1180px}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{width:min(92%,var(--max));margin:auto}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(8,8,8,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}.navin{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{font:700 24px 'Space Grotesk';letter-spacing:-1px}.logo span{color:var(--accent)}.links{display:flex;gap:28px;color:#cfcfcf;font-size:14px}.links a:hover{color:var(--accent)}.navbtn{border:1px solid #444;padding:10px 16px;border-radius:999px;font-size:13px}.navbtn:hover{background:#fff;color:#000}
-.hero{min-height:100vh;display:grid;place-items:center;padding:130px 0 70px;background:radial-gradient(circle at 75% 35%,#1a1d0b 0,#0b0b0b 32%,#080808 65%)}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;font-size:12px;text-transform:uppercase;margin-bottom:20px}.hero h1{font:700 clamp(54px,8vw,105px)/.92 'Space Grotesk';letter-spacing:-5px;max-width:850px}.hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px #fff}.hero p{font-size:18px;color:var(--muted);max-width:590px;margin:28px 0}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:14px 20px;border-radius:999px;background:var(--accent);color:#0a0a0a;font-weight:700}.btn.alt{background:transparent;color:#fff;border:1px solid #444}.btn.alt:hover{border-color:#fff}.hero-card{border:1px solid var(--line);background:#101010;border-radius:28px;padding:12px;transform:rotate(2deg);box-shadow:0 30px 80px #000}.hero-card video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;display:block}.tag{margin:12px 8px 4px;color:#aaa;font-size:12px}.tag b{color:#fff}
-section{padding:110px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.kicker{color:var(--accent);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:10px}.section-head h2{font:700 clamp(38px,5vw,64px)/1 'Space Grotesk';letter-spacing:-2.5px}.section-head p{max-width:450px;color:var(--muted)}
-.showcase{background:#0c0c0c}.showbox{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}.showvideo{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#000}.showvideo video{width:100%;display:block;max-height:720px;object-fit:cover}.showcopy h3{font:600 34px 'Space Grotesk';margin-bottom:15px}.showcopy p{color:var(--muted);margin-bottom:24px}.timeline{border-top:1px solid var(--line);margin-top:30px}.tl{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px}.tl span:first-child{color:var(--accent);font-weight:700}
-.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.work{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}.work video,.work img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}.work-body{padding:20px}.work-body small{color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-size:10px;font-weight:700}.work-body h3{font:600 25px 'Space Grotesk';margin:6px 0}.work-body p{color:var(--muted);font-size:14px}
-.services{background:#0c0c0c}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.service{padding:28px;border:1px solid var(--line);border-radius:20px;background:#101010;min-height:190px}.num{color:var(--accent);font-weight:700;font-size:12px}.service h3{font:600 23px 'Space Grotesk';margin:20px 0 8px}.service p{color:var(--muted);font-size:14px}
-.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{border:1px solid #303030;border-radius:999px;padding:12px 16px;color:#ddd;background:#0d0d0d}.process{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:24px;border-top:1px solid #444}.step strong{color:var(--accent);font-size:13px}.step h3{font:600 24px 'Space Grotesk';margin:12px 0 7px}.step p{color:var(--muted);font-size:14px}
-.cta{padding:90px 0 110px;text-align:center;background:linear-gradient(180deg,#0c0c0c,#101300)}.cta h2{font:700 clamp(44px,7vw,88px)/.95 'Space Grotesk';letter-spacing:-4px}.cta p{color:var(--muted);max-width:540px;margin:20px auto 30px}.contact-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.contact-pill{border:1px solid #3a3a3a;border-radius:999px;padding:13px 18px;color:#ddd}.contact-pill:hover{border-color:#fff}
-footer{border-top:1px solid var(--line);padding:25px 0;color:#777;font-size:12px;display:flex;justify-content:space-between}.mobile{display:none}
-@media(max-width:850px){.links{display:none}.mobile{display:block}.hero-grid,.showbox{grid-template-columns:1fr;gap:35px}.hero{padding-top:110px}.hero h1{letter-spacing:-3px}.hero-card{max-width:400px;margin:auto}.section-head{display:block}.section-head p{margin-top:16px}.service-grid,.process{grid-template-columns:1fr 1fr}.work-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){section{padding:75px 0}.service-grid,.process,.work-grid{grid-template-columns:1fr}.hero h1{font-size:54px}.hero p{font-size:16px}.navbtn{padding:8px 13px}.showcopy h3{font-size:28px}footer{display:block;text-align:center}.hero-card{transform:none}}
+  :root{
+    --bg:#121210;
+    --card:#1a1a17;
+    --line:#31312b;
+    --text:#ece7dc;
+    --muted:#8f8a7c;
+    --tape:#d99a3f;
+    --tape-dim:#8a5f24;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace}
+  h1,h2,h3{font-family:'Archivo Expanded',sans-serif;letter-spacing:-0.01em}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:30;
+    background:rgba(18,18,16,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .navrow{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:'Archivo Expanded',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.02em}
+  .logo span{color:var(--tape)}
+  .navlinks{display:flex;gap:32px;align-items:center}
+  .navlinks a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .15s}
+  .navlinks a:hover{color:var(--text)}
+  .navcta{
+    background:var(--tape);color:#161410;padding:9px 18px;border-radius:3px;
+    font-weight:600;font-size:14px;text-decoration:none;
+  }
+  .mobile-nav{display:none}
+  @media(max-width:820px){
+    .navlinks{display:none}
+    .mobile-nav{display:block}
+  }
+
+  /* HERO — timeline metaphor */
+  .hero{
+    padding:90px 0 60px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .tc{
+    color:var(--tape-dim);
+    font-size:13px;
+    letter-spacing:.04em;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(40px,6.2vw,84px);
+    font-weight:800;
+    line-height:.98;
+    max-width:920px;
+  }
+  .hero-sub{
+    display:grid;
+    grid-template-columns:1.3fr .8fr;
+    gap:60px;
+    margin-top:38px;
+    align-items:end;
+  }
+  .hero-sub p{color:var(--muted);font-size:17px;max-width:46ch}
+  .hero-meta{
+    display:flex;flex-direction:column;gap:10px;
+    border-left:1px solid var(--line);
+    padding-left:24px;
+  }
+  .hero-meta .row{display:flex;justify-content:space-between;font-size:13px}
+  .hero-meta .row span:first-child{color:var(--muted)}
+  .hero-meta .row span:last-child{color:var(--text)}
+  @media(max-width:760px){
+    .hero-sub{grid-template-columns:1fr;gap:28px}
+    .hero-meta{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:18px}
+  }
+
+  /* Scrubber decoration */
+  .scrubber{
+    margin-top:56px;height:34px;border:1px solid var(--line);border-radius:4px;
+    position:relative;overflow:hidden;
+    background:repeating-linear-gradient(90deg,#1c1c18 0 1px,transparent 1px 40px);
+  }
+  .scrubber::after{
+    content:"";position:absolute;left:22%;top:0;bottom:0;width:2px;background:var(--tape);
+  }
+  .scrubber::before{
+    content:"00:00:07:12";
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--tape);
+    position:absolute;left:calc(22% + 8px);top:9px;
+  }
+
+  /* SECTION HEAD */
+  .section{padding:96px 0}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    gap:24px;margin-bottom:44px;border-bottom:1px solid var(--line);padding-bottom:20px;
+  }
+  .section-head h2{font-size:clamp(28px,4vw,42px)}
+  .section-head .tc{margin:0}
+  @media(max-width:600px){.section-head{flex-direction:column;align-items:flex-start;gap:10px}}
+
+  /* SERVICES */
+  .services{background:#0e0e0c;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+  .service{
+    padding:30px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .service:nth-child(3n){border-right:none}
+  .service .num{font-family:'IBM Plex Mono',monospace;color:var(--tape-dim);font-size:12px}
+  .service h3{font-size:19px;margin-top:10px;font-weight:700}
+  .service p{color:var(--muted);font-size:14px;margin-top:8px}
+  @media(max-width:760px){
+    .service-grid{grid-template-columns:1fr}
+    .service{border-right:none}
+  }
+
+  /* WORK / VIDEOS */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .work-card{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  }
+  .video-frame{position:relative;width:100%;aspect-ratio:9/16;background:#000}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .work-info{padding:18px 20px}
+  .work-info .tc{margin-bottom:6px}
+  .work-info h3{font-size:17px;font-weight:700}
+  .work-info p{color:var(--muted);font-size:13.5px;margin-top:6px}
+  @media(max-width:760px){.work-grid{grid-template-columns:1fr}}
+
+  /* PROCESS */
+  .process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .step{background:var(--bg);padding:26px 22px}
+  .step .tc{margin-bottom:14px}
+  .step h3{font-size:16px;font-weight:700}
+  .step p{color:var(--muted);font-size:13.5px;margin-top:8px}
+  @media(max-width:760px){.process{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta{
+    padding:100px 0;text-align:center;background:linear-gradient(180deg,#161410,#0e0e0c);
+    border-top:1px solid var(--line);
+  }
+  .cta h2{font-size:clamp(32px,5vw,58px);max-width:14ch;margin:0 auto 22px}
+  .cta p{color:var(--muted);margin-bottom:34px}
+  .btnrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    padding:14px 30px;border-radius:3px;font-weight:600;text-decoration:none;font-size:15px;
+  }
+  .btn-primary{background:var(--tape);color:#161410}
+  .btn-outline{border:1px solid var(--line);color:var(--text)}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+  .footrow{display:flex;justify-content:space-between;align-items:center}
+  .footlinks{display:flex;gap:18px}
+  .footlinks a{color:var(--muted);text-decoration:none}
+  .footlinks a:hover{color:var(--text)}
+  @media(max-width:600px){.footrow{flex-direction:column;gap:14px;text-align:center}}
 </style>
 </head>
 <body>
-<nav><div class="wrap navin"><a class="logo" href="#top">CHETAN<span>.</span></a><div class="links"><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></div><a class="navbtn" href="#contact">Let's Work</a></div></nav>
-<main id="top">
-<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Video Editor · India</div><h1>EDITING THAT<br><em>KEEPS PEOPLE</em><br>WATCHING.</h1><p>I turn raw footage into clean, engaging and story-driven videos for YouTube, Reels, Shorts and brands.</p><div class="actions"><a class="btn" href="#showreel">Watch Showreel ↗</a><a class="btn alt" href="#work">View My Work</a></div></div><div class="hero-card"><video src="assets/showreel.mp4" autoplay muted loop playsinline></video><div class="tag"><b>SELECTED EDITS</b> · 2026 SHOWREEL</div></div></div></section>
-<section id="showreel" class="showcase"><div class="wrap"><div class="section-head"><div><div class="kicker">01 / Showreel</div><h2>One minute.<br>My editing style.</h2></div><p>A mix of health & wellness, talking-head, event, fashion and business-focused edits from my recent work.</p></div><div class="showbox"><div class="showvideo"><video controls playsinline poster="assets/thumbs/talking.jpg" src="assets/showreel.mp4"></video></div><div class="showcopy"><h3>Story first. Effects second.</h3><p>I focus on pacing, clean cuts, visual rhythm, captions, B-roll, music and sound design — using effects only when they improve the story.</p><div class="timeline"><div class="tl"><span>01</span><span>Hook & pacing</span></div><div class="tl"><span>02</span><span>Talking head + B-roll</span></div><div class="tl"><span>03</span><span>Motion & captions</span></div><div class="tl"><span>04</span><span>Cinematic / social edits</span></div></div></div></div></div></section>
-<section id="work"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / Selected Work</div><h2>Different footage.<br>Same attention to detail.</h2></div><p>Five samples showing the range of formats I can handle for creators, brands and social media.</p></div><div class="work-grid">
-<article class="work"><video controls preload="metadata" poster="assets/thumbs/health.jpg" src="assets/videos/<iframe width="100%" height="500" src="https://www.youtube.com/embed/9U5Lls6P2Iw" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>"></video><div class="work-body"><small>Health · Wellness</small><h3>Wellness Content</h3><p>Clean visual storytelling with educational messaging, branded graphics and a calm visual language.</p></div></article>
-<article class="work"><video controls preload="metadata" poster="assets/thumbs/talking.jpg" src="assets/videos/<iframe width="100%" height="500" src="https://www.youtube.com/embed/fmsHFljCV04" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>"></video><div class="work-body"><small>Talking Head</small><h3>Yoga / Creator Video</h3><p>Presenter-focused edit built around clean cuts, natural pacing and visual engagement.</p></div></article>
-<article class="work"><video controls preload="metadata" poster="assets/thumbs/event.jpg" src="assets/videos/<iframe width="100%" height="500" src="https://www.youtube.com/embed/HazKaOHXAfo" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>"></video><div class="work-body"><small>Event · Social</small><h3>Event / Viral Moment</h3><p>Fast vertical content designed to capture an energetic moment and keep the viewer focused.</p></div></article>
-<article class="work"><video controls preload="metadata" poster="assets/thumbs/fashion.jpg" src="assets/videos/<iframe width="100%" height="500" src="https://www.youtube.com/embed/YXGB-Dpi5_k" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>"></video><div class="work-body"><small>Fashion · Reel</small><h3>Fashion Short</h3><p>Vertical fashion content with movement, music-led pacing and visual emphasis on the subject.</p></div></article>
-<article class="work"><video controls preload="metadata" poster="assets/thumbs/business.jpg" src="assets/videos/<iframe width="100%" height="500" src="https://www.youtube.com/embed/piAJUcV1bXY" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe><div class="work-body"><small>Business · Personal Brand</small><h3>Business Reel</h3><p>Professional talking-head content built for social media and personal-brand communication.</p></div></article>
-</div></div></section>
-<section id="services" class="services"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / Services</div><h2>What I can<br>edit for you.</h2></div><p>From one Reel to a complete YouTube workflow, I can take raw footage and turn it into publish-ready content.</p></div><div class="service-grid">
-<div class="service"><span class="num">01</span><h3>YouTube Long-Form</h3><p>Story-driven cuts, B-roll, captions, music, sound design, pacing and retention-focused editing.</p></div>
-<div class="service"><span class="num">02</span><h3>Reels & Shorts</h3><p>Hook-first vertical edits with dynamic captions, punchy cuts, SFX and social-ready formatting.</p></div>
-<div class="service"><span class="num">03</span><h3>Talking Head</h3><p>Clean jump cuts, B-roll, zooms, captions and graphics for creators, coaches and educators.</p></div>
-<div class="service"><span class="num">04</span><h3>Cinematic Edits</h3><p>Music, color, speed ramps, transitions and sound design for a polished cinematic feel.</p></div>
-<div class="service"><span class="num">05</span><h3>Business Videos</h3><p>Professional edits for products, services, brands, promotions and personal-brand content.</p></div>
-<div class="service"><span class="num">06</span><h3>Social Content</h3><p>Platform-ready vertical content for Instagram, YouTube Shorts and other social platforms.</p></div>
-</div></div></section>
-<section><div class="wrap"><div class="section-head"><div><div class="kicker">04 / Skills</div><h2>My editing toolkit.</h2></div><p>Creative editing skills focused on clarity, retention and a professional finish.</p></div><div class="skills"><span class="skill">Video Editing</span><span class="skill">Storytelling</span><span class="skill">Pacing</span><span class="skill">B-Roll</span><span class="skill">Captions</span><span class="skill">Motion Graphics</span><span class="skill">Sound Design</span><span class="skill">Color Correction</span><span class="skill">Color Grading</span><span class="skill">YouTube Editing</span><span class="skill">Reels / Shorts</span><span class="skill">Social Media</span></div></div></section>
-<section id="process" class="services"><div class="wrap"><div class="section-head"><div><div class="kicker">05 / Process</div><h2>Simple workflow.<br>Strong output.</h2></div></div><div class="process"><div class="step"><strong>01 / UNDERSTAND</strong><h3>Brief</h3><p>Understand the goal, audience, references and required format.</p></div><div class="step"><strong>02 / ORGANIZE</strong><h3>Footage</h3><p>Review footage, audio and assets before building the edit.</p></div><div class="step"><strong>03 / BUILD</strong><h3>Rough Cut</h3><p>Create the story with clean cuts and strong pacing.</p></div><div class="step"><strong>04 / ENHANCE</strong><h3>Polish</h3><p>Add B-roll, captions, graphics, music and sound design.</p></div><div class="step"><strong>05 / REFINE</strong><h3>Final Pass</h3><p>Color, audio balance, continuity and quality check.</p></div><div class="step"><strong>06 / DELIVER</strong><h3>Publish</h3><p>Export in the required format and deliver the final video.</p></div></div></div></section>
-<section id="contact" class="cta"><div class="wrap"><div class="kicker">06 / Contact</div><h2>LET'S CREATE<br>SOMETHING WORTH WATCHING.</h2><p>Have raw footage, a YouTube channel, a Reel idea or a brand project? Send me the brief and let's talk.</p><div class="contact-row"><a class="btn" href="mailto:YOUR-EMAIL@example.com">Email Me</a><a class="contact-pill" href="https://wa.me/919617282001" target="_blank">WhatsApp · 9617282001</a><a class="contact-pill" href="https://instagram.com/apnaedits.official" target="_blank">Instagram · @apnaedits.official</a></div></div></section>
-</main>
-<footer class="wrap"><span>© 2026 Chetan — Video Editor</span><span>Raw footage → Better story.</span></footer>
-</body></html>
+
+<nav>
+  <div class="wrap navrow">
+    <div class="logo">CHETAN<span>.</span>EDITS</div>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="navcta">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="tc mono">REEL — 001 / INDORE, IN</div>
+    <h1>I cut raw footage<br>into videos people<br>actually finish watching.</h1>
+    <div class="hero-sub">
+      <p>Video editor working with creators, wellness brands and businesses on YouTube long-form, Shorts, Reels and talking-head content — pacing, sound design and color that hold attention.</p>
+      <div class="hero-meta">
+        <div class="row"><span>Based in</span><span>Indore, India</span></div>
+        <div class="row"><span>Experience</span><span>1+ year</span></div>
+        <div class="row"><span>Formats</span><span>Long-form / Shorts / Reels</span></div>
+        <div class="row"><span>Turnaround</span><span>48–72 hrs</span></div>
+      </div>
+    </div>
+    <div class="scrubber"></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head" style="border-bottom:none;padding-top:70px">
+      <h2>What I edit</h2>
+      <div class="tc mono">03 SERVICES</div>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service">
+      <div class="num mono">01</div>
+      <h3>YouTube long-form</h3>
+      <p>Full-episode edits — story structure, pacing and retention cuts for talking-head and vlog channels.</p>
+    </div>
+    <div class="service">
+      <div class="num mono">02</div>
+      <h3>Shorts &amp; Reels</h3>
+      <p>Fast, hook-first cuts built for vertical feeds — captions, sound design, jump cuts.</p>
+    </div>
+    <div class="service">
+      <div class="num mono">03</div>
+      <h3>Cinematic edits</h3>
+      <p>Color-graded, music-driven cuts for brand films, events and promo content.</p>
+    </div>
+    <div class="service">
+      <div class="num mono">04</div>
+      <h3>Talking-head content</h3>
+      <p>Clean, distraction-free edits for coaches, therapists and educators — jump-cut heavy, clarity-first.</p>
+    </div>
+    <div class="service">
+      <div class="num mono">05</div>
+      <h3>Promotional videos</h3>
+      <p>Product and service promos built to convert — clear CTA structure, brand-consistent pacing.</p>
+    </div>
+    <div class="service">
+      <div class="num mono">06</div>
+      <h3>Social media edits</h3>
+      <p>Ongoing content editing for brand accounts — consistent style across a posting calendar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Recent work</h2>
+      <div class="tc mono">05 SAMPLES</div>
+    </div>
+    <div class="work-grid">
+
+      <div class="work-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/piAJUcV1bXY" title="Business Reel" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="work-info">
+          <div class="tc mono">BUSINESS</div>
+          <h3>Business Reel</h3>
+          <p>Brand-focused short edit — clean pacing built for a business feed.</p>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/YXGB-Dpi5_k" title="Fashion Short" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="work-info">
+          <div class="tc mono">FASHION</div>
+          <h3>Fashion Short</h3>
+          <p>Rhythmic cut-to-beat edit built for a fashion reel.</p>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/HazKaOHXAfo" title="Event / Viral Moment" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="work-info">
+          <div class="tc mono">EVENT</div>
+          <h3>Event / Viral Moment</h3>
+          <p>Fast-paced highlight edit captured live and cut for shareability.</p>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/9U5Lls6P2Iw" title="Wellness Content" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="work-info">
+          <div class="tc mono">WELLNESS</div>
+          <h3>Wellness Content</h3>
+          <p>Calm, breathable pacing for a health &amp; wellness brand.</p>
+        </div>
+      </div>
+
+      <div class="work-card" style="grid-column:1/-1;max-width:420px;margin:0 auto">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/fmsHFljCV04" title="Yoga / Creator Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="work-info">
+          <div class="tc mono">YOGA / CREATOR</div>
+          <h3>Yoga / Creator Video</h3>
+          <p>Talking-head yoga content — jump-cut edit for a creator channel.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How I work</h2>
+      <div class="tc mono">04 STEPS</div>
+    </div>
+  </div>
+  <div class="process">
+    <div class="step">
+      <div class="tc mono">STEP 01</div>
+      <h3>Send raw footage</h3>
+      <p>Share your clips, references and target platform — YouTube, Shorts or Reels.</p>
+    </div>
+    <div class="step">
+      <div class="tc mono">STEP 02</div>
+      <h3>Rough cut</h3>
+      <p>I build the story structure and pacing first, before any polish.</p>
+    </div>
+    <div class="step">
+      <div class="tc mono">STEP 03</div>
+      <h3>Sound &amp; color</h3>
+      <p>Sound design, music, captions and color grading layered in.</p>
+    </div>
+    <div class="step">
+      <div class="tc mono">STEP 04</div>
+      <h3>Deliver &amp; revise</h3>
+      <p>Final export within 48–72 hrs, with a revision round included.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="tc mono" style="justify-content:center;display:flex">LET'S WORK TOGETHER</div>
+    <h2>Got footage that needs a story?</h2>
+    <p>Send me your raw clips — I'll turn them into something worth watching.</p>
+    <div class="btnrow">
+      <a class="btn btn-primary" href="https://wa.me/919617282001" target="_blank" rel="noopener">Message on WhatsApp</a>
+      <a class="btn btn-outline" href="mailto:hello@example.com">Email me</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footrow">
+    <div>© 2026 Chetan — Video Editor</div>
+    <div class="footlinks">
+      <a href="https://instagram.com/apnaedits.official" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/919617282001" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
